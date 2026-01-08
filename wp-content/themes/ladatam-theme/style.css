@@ -1,0 +1,719 @@
+/*
+Theme Name: LADATAM Dark Tech
+Theme URI: https://ladatam.com
+Description: Tema hijo personalizado para LADATAM - Plataforma de transformación digital. Estética Dark Tech con IA y analítica de datos.
+Author: LADATAM
+Author URI: https://ladatam.com
+Template: hello-elementor
+Version: 1.0.0
+Text Domain: ladatam-theme
+*/
+
+/* ============================================
+   LADATAM DARK TECH THEME
+   Paleta: Negro #000000 | Lima #d9ff18 | Ámbar #f8bb03
+   ============================================ */
+
+/* === VARIABLES CSS === */
+:root {
+    /* Colores principales */
+    --ladatam-black: #000000;
+    --ladatam-dark: #0a0a0a;
+    --ladatam-dark-gray: #1a1a1a;
+    --ladatam-gray: #2a2a2a;
+    --ladatam-light-gray: #888888;
+    --ladatam-lima: #d9ff18;
+    --ladatam-amber: #f8bb03;
+    --ladatam-white: #ffffff;
+    
+    /* Gradientes */
+    --ladatam-gradient: linear-gradient(135deg, var(--ladatam-lima) 0%, var(--ladatam-amber) 100%);
+    --ladatam-gradient-dark: linear-gradient(135deg, var(--ladatam-dark) 0%, var(--ladatam-gray) 100%);
+    --ladatam-glow-lima: 0 0 20px rgba(217, 255, 24, 0.4);
+    --ladatam-glow-amber: 0 0 20px rgba(248, 187, 3, 0.4);
+    
+    /* Tipografía */
+    --font-primary: 'Inter', 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+    
+    /* Bordes y radios */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* === RESET Y BASE === */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--ladatam-black);
+    color: var(--ladatam-white);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* === SELECCIÓN DE TEXTO === */
+::selection {
+    background: var(--ladatam-lima);
+    color: var(--ladatam-black);
+}
+
+::-moz-selection {
+    background: var(--ladatam-lima);
+    color: var(--ladatam-black);
+}
+
+/* === SCROLLBAR PERSONALIZADO === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ladatam-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ladatam-gray);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ladatam-lima);
+}
+
+/* === TIPOGRAFÍA === */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+p {
+    color: var(--ladatam-light-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--ladatam-lima);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: var(--ladatam-amber);
+    text-shadow: var(--ladatam-glow-lima);
+}
+
+/* === CÓDIGO / TECH ELEMENTS === */
+.code-text, code, .tech-bracket {
+    font-family: var(--font-mono);
+}
+
+.tech-bracket {
+    color: var(--ladatam-lima);
+    font-weight: 300;
+}
+
+/* === BOTONES LADATAM === */
+.ladatam-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.ladatam-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition-slow);
+}
+
+.ladatam-btn:hover::before {
+    left: 100%;
+}
+
+/* Botón primario - Lima */
+.ladatam-btn-primary {
+    background: var(--ladatam-lima);
+    color: var(--ladatam-black);
+}
+
+.ladatam-btn-primary:hover {
+    background: var(--ladatam-amber);
+    box-shadow: var(--ladatam-glow-amber);
+    transform: translateY(-2px);
+}
+
+/* Botón secundario - Outline */
+.ladatam-btn-secondary {
+    background: transparent;
+    color: var(--ladatam-lima);
+    border: 2px solid var(--ladatam-lima);
+}
+
+.ladatam-btn-secondary:hover {
+    background: var(--ladatam-lima);
+    color: var(--ladatam-black);
+    box-shadow: var(--ladatam-glow-lima);
+    transform: translateY(-2px);
+}
+
+/* Botón terciario - Ámbar */
+.ladatam-btn-amber {
+    background: var(--ladatam-amber);
+    color: var(--ladatam-black);
+}
+
+.ladatam-btn-amber:hover {
+    background: var(--ladatam-lima);
+    box-shadow: var(--ladatam-glow-lima);
+    transform: translateY(-2px);
+}
+
+/* === CARDS LADATAM === */
+.ladatam-card {
+    background: var(--ladatam-dark-gray);
+    border: 1px solid var(--ladatam-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.ladatam-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--ladatam-gradient);
+    transform: scaleX(0);
+    transition: var(--transition-normal);
+}
+
+.ladatam-card:hover {
+    border-color: var(--ladatam-lima);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ladatam-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Card con glow */
+.ladatam-card-glow {
+    background: var(--ladatam-dark-gray);
+    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.ladatam-card-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: var(--radius-lg);
+    background: var(--ladatam-gradient);
+    z-index: -1;
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.ladatam-card-glow:hover::before {
+    opacity: 1;
+}
+
+/* === SECCIONES === */
+.ladatam-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    position: relative;
+}
+
+.ladatam-section-dark {
+    background: var(--ladatam-dark);
+}
+
+.ladatam-section-gradient {
+    background: var(--ladatam-gradient-dark);
+}
+
+/* === HERO SECTION === */
+.ladatam-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ladatam-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(217, 255, 24, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(248, 187, 3, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* === GRID BACKGROUND ANIMADO === */
+.grid-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(217, 255, 24, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(217, 255, 24, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* === ANIMACIONES === */
+/* Fade In Up */
+.animate-fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow Pulse */
+.animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 5px var(--ladatam-lima); }
+    50% { box-shadow: 0 0 30px var(--ladatam-lima), 0 0 60px var(--ladatam-lima); }
+}
+
+/* Text Gradient Animation */
+.text-gradient {
+    background: var(--ladatam-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient-animated {
+    background: linear-gradient(90deg, var(--ladatam-lima), var(--ladatam-amber), var(--ladatam-lima));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 3s linear infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Typing Cursor */
+.typing-cursor::after {
+    content: '|';
+    color: var(--ladatam-lima);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Float Animation */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Rotate Slow */
+.animate-rotate {
+    animation: rotateSlow 20s linear infinite;
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Scale on Hover */
+.hover-scale {
+    transition: var(--transition-normal);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* === ICONOS TECH === */
+.tech-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ladatam-dark-gray);
+    border: 1px solid var(--ladatam-gray);
+    border-radius: var(--radius-md);
+    font-size: 1.5rem;
+    color: var(--ladatam-lima);
+    transition: var(--transition-normal);
+}
+
+.tech-icon:hover {
+    background: var(--ladatam-lima);
+    color: var(--ladatam-black);
+    box-shadow: var(--ladatam-glow-lima);
+}
+
+/* === BADGES / TAGS === */
+.ladatam-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--radius-sm);
+    background: rgba(217, 255, 24, 0.1);
+    color: var(--ladatam-lima);
+    border: 1px solid var(--ladatam-lima);
+}
+
+.ladatam-badge-amber {
+    background: rgba(248, 187, 3, 0.1);
+    color: var(--ladatam-amber);
+    border-color: var(--ladatam-amber);
+}
+
+/* === LÍNEA DECORATIVA TECH === */
+.tech-line {
+    height: 2px;
+    background: var(--ladatam-gradient);
+    position: relative;
+}
+
+.tech-line::before,
+.tech-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--ladatam-lima);
+    border-radius: 50%;
+}
+
+.tech-line::before { left: 0; }
+.tech-line::after { right: 0; }
+
+/* === PILARES LADATAM === */
+.pilar-card {
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.pilar-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: var(--ladatam-gradient);
+    color: var(--ladatam-black);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-normal);
+}
+
+.pilar-card:hover .pilar-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: var(--ladatam-glow-lima);
+}
+
+/* === CÓDIGO DECORATIVO === */
+.code-block {
+    background: var(--ladatam-dark);
+    border: 1px solid var(--ladatam-gray);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    overflow-x: auto;
+}
+
+.code-block .comment { color: var(--ladatam-light-gray); }
+.code-block .keyword { color: var(--ladatam-amber); }
+.code-block .string { color: var(--ladatam-lima); }
+.code-block .function { color: var(--ladatam-white); }
+
+/* === STATS / NÚMEROS === */
+.stat-number {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    background: var(--ladatam-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--ladatam-light-gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* === TESTIMONIALS === */
+.testimonial-card {
+    background: var(--ladatam-dark-gray);
+    border-left: 4px solid var(--ladatam-lima);
+    padding: var(--spacing-md);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.testimonial-quote {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--ladatam-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.testimonial-quote::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--ladatam-lima);
+    line-height: 0;
+    vertical-align: -0.5em;
+    margin-right: 0.25rem;
+}
+
+/* === HEADER/NAV DARK === */
+.ladatam-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--ladatam-gray);
+    transition: var(--transition-normal);
+}
+
+.ladatam-header.scrolled {
+    background: rgba(0, 0, 0, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* === FOOTER === */
+.ladatam-footer {
+    background: var(--ladatam-dark);
+    border-top: 1px solid var(--ladatam-gray);
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.ladatam-footer a {
+    color: var(--ladatam-light-gray);
+}
+
+.ladatam-footer a:hover {
+    color: var(--ladatam-lima);
+}
+
+/* === FORMS === */
+.ladatam-input {
+    width: 100%;
+    padding: 1rem;
+    background: var(--ladatam-dark-gray);
+    border: 1px solid var(--ladatam-gray);
+    border-radius: var(--radius-md);
+    color: var(--ladatam-white);
+    font-family: var(--font-primary);
+    transition: var(--transition-normal);
+}
+
+.ladatam-input:focus {
+    outline: none;
+    border-color: var(--ladatam-lima);
+    box-shadow: 0 0 0 3px rgba(217, 255, 24, 0.1);
+}
+
+.ladatam-input::placeholder {
+    color: var(--ladatam-light-gray);
+}
+
+/* === LOADER === */
+.ladatam-loader {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--ladatam-gray);
+    border-top-color: var(--ladatam-lima);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 2rem;
+        --spacing-xl: 4rem;
+    }
+    
+    .ladatam-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* === UTILIDADES === */
+.text-lima { color: var(--ladatam-lima) !important; }
+.text-amber { color: var(--ladatam-amber) !important; }
+.text-white { color: var(--ladatam-white) !important; }
+.text-gray { color: var(--ladatam-light-gray) !important; }
+
+.bg-dark { background: var(--ladatam-dark) !important; }
+.bg-dark-gray { background: var(--ladatam-dark-gray) !important; }
+.bg-gradient { background: var(--ladatam-gradient) !important; }
+
+.border-lima { border-color: var(--ladatam-lima) !important; }
+.border-amber { border-color: var(--ladatam-amber) !important; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: var(--spacing-sm) !important; }
+.mb-2 { margin-bottom: var(--spacing-md) !important; }
+.mb-3 { margin-bottom: var(--spacing-lg) !important; }
+
+/* === BRACKETS DECORATIVOS { } < > === */
+.bracket-decoration {
+    position: relative;
+}
+
+.bracket-decoration::before {
+    content: '{ ';
+    color: var(--ladatam-lima);
+    font-family: var(--font-mono);
+    font-weight: 300;
+}
+
+.bracket-decoration::after {
+    content: ' }';
+    color: var(--ladatam-lima);
+    font-family: var(--font-mono);
+    font-weight: 300;
+}
+
+.angle-decoration::before {
+    content: '< ';
+    color: var(--ladatam-amber);
+    font-family: var(--font-mono);
+}
+
+.angle-decoration::after {
+    content: ' />';
+    color: var(--ladatam-amber);
+    font-family: var(--font-mono);
+}
+
+/* === PARTICLES EFFECT (para usar con JS) === */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--ladatam-lima);
+    border-radius: 50%;
+    opacity: 0.5;
+}

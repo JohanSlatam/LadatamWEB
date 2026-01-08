@@ -1,0 +1,525 @@
+/**
+ * LADATAM Dark Tech - Estilos adicionales para Elementor
+ * 
+ * Clases CSS personalizadas para usar en Elementor
+ * Agregar estas clases en la sección Avanzado > Clases CSS
+ */
+
+/* ============================================
+   CLASES PARA ELEMENTOR
+   ============================================ */
+
+/* === SECCIONES === */
+
+/* Sección Hero con grid animado */
+.elementor-section.hero-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.elementor-section.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(217, 255, 24, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(217, 255, 24, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.elementor-section.hero-section > .elementor-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Sección con glow de fondo */
+.elementor-section.glow-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(217, 255, 24, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(248, 187, 3, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* === WIDGETS/COLUMNAS === */
+
+/* Card con borde gradient en hover */
+.elementor-column.gradient-border-card > .elementor-widget-wrap {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.elementor-column.gradient-border-card > .elementor-widget-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #d9ff18 0%, #f8bb03 100%);
+    border-radius: 16px 16px 0 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.elementor-column.gradient-border-card:hover > .elementor-widget-wrap {
+    border-color: #d9ff18;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.elementor-column.gradient-border-card:hover > .elementor-widget-wrap::before {
+    transform: scaleX(1);
+}
+
+/* Card con glow completo */
+.elementor-column.glow-card > .elementor-widget-wrap {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.elementor-column.glow-card > .elementor-widget-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #d9ff18 0%, #f8bb03 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.elementor-column.glow-card:hover > .elementor-widget-wrap::before {
+    opacity: 1;
+}
+
+/* === TÍTULOS === */
+
+/* Título con gradiente */
+.elementor-widget-heading.gradient-title .elementor-heading-title {
+    background: linear-gradient(135deg, #d9ff18 0%, #f8bb03 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Título con gradiente animado */
+.elementor-widget-heading.gradient-animated .elementor-heading-title {
+    background: linear-gradient(90deg, #d9ff18, #f8bb03, #d9ff18);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 3s linear infinite;
+}
+
+/* Título con brackets */
+.elementor-widget-heading.bracket-title .elementor-heading-title::before {
+    content: '{ ';
+    color: #d9ff18;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+}
+
+.elementor-widget-heading.bracket-title .elementor-heading-title::after {
+    content: ' }';
+    color: #d9ff18;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+}
+
+/* Título con angle brackets */
+.elementor-widget-heading.angle-title .elementor-heading-title::before {
+    content: '< ';
+    color: #f8bb03;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.elementor-widget-heading.angle-title .elementor-heading-title::after {
+    content: ' />';
+    color: #f8bb03;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* === BOTONES === */
+
+/* Botón primario LADATAM */
+.elementor-widget-button.btn-ladatam-primary .elementor-button {
+    background: #d9ff18 !important;
+    color: #000000 !important;
+    border: none !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.elementor-widget-button.btn-ladatam-primary .elementor-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s ease;
+}
+
+.elementor-widget-button.btn-ladatam-primary .elementor-button:hover {
+    background: #f8bb03 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(248, 187, 3, 0.4);
+}
+
+.elementor-widget-button.btn-ladatam-primary .elementor-button:hover::before {
+    left: 100%;
+}
+
+/* Botón secundario (outline) */
+.elementor-widget-button.btn-ladatam-secondary .elementor-button {
+    background: transparent !important;
+    color: #d9ff18 !important;
+    border: 2px solid #d9ff18 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 13px 28px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-button.btn-ladatam-secondary .elementor-button:hover {
+    background: #d9ff18 !important;
+    color: #000000 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(217, 255, 24, 0.4);
+}
+
+/* Botón ámbar */
+.elementor-widget-button.btn-ladatam-amber .elementor-button {
+    background: #f8bb03 !important;
+    color: #000000 !important;
+    border: none !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-button.btn-ladatam-amber .elementor-button:hover {
+    background: #d9ff18 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(217, 255, 24, 0.4);
+}
+
+/* === ICONOS === */
+
+/* Icono tech style */
+.elementor-widget-icon.tech-icon .elementor-icon {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    color: #d9ff18;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-icon.tech-icon .elementor-icon:hover {
+    background: #d9ff18;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(217, 255, 24, 0.4);
+}
+
+/* Icono con gradiente de fondo */
+.elementor-widget-icon.gradient-icon .elementor-icon {
+    background: linear-gradient(135deg, #d9ff18 0%, #f8bb03 100%);
+    color: #000000;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-icon.gradient-icon:hover .elementor-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 30px rgba(217, 255, 24, 0.5);
+}
+
+/* === ICON BOX / PILARES === */
+
+.elementor-widget-icon-box.pilar-box {
+    text-align: center;
+}
+
+.elementor-widget-icon-box.pilar-box .elementor-icon {
+    width: 80px !important;
+    height: 80px !important;
+    background: linear-gradient(135deg, #d9ff18 0%, #f8bb03 100%);
+    color: #000000;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-icon-box.pilar-box:hover .elementor-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 30px rgba(217, 255, 24, 0.5);
+}
+
+/* === IMÁGENES === */
+
+/* Imagen con glow */
+.elementor-widget-image.glow-image img {
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-image.glow-image:hover img {
+    box-shadow: 0 0 40px rgba(217, 255, 24, 0.3);
+}
+
+/* Imagen flotante animada */
+.elementor-widget-image.float-animation img {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* === TESTIMONIOS === */
+
+.elementor-widget-testimonial.ladatam-testimonial .elementor-testimonial-wrapper {
+    background: #1a1a1a;
+    border-left: 4px solid #d9ff18;
+    padding: 30px;
+    border-radius: 0 12px 12px 0;
+}
+
+.elementor-widget-testimonial.ladatam-testimonial .elementor-testimonial-content {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #ffffff;
+}
+
+.elementor-widget-testimonial.ladatam-testimonial .elementor-testimonial-content::before {
+    content: '"';
+    font-size: 3rem;
+    color: #d9ff18;
+    line-height: 0;
+    vertical-align: -0.5em;
+}
+
+/* === FORMS === */
+
+.elementor-widget-form.ladatam-form input,
+.elementor-widget-form.ladatam-form textarea,
+.elementor-widget-form.ladatam-form select {
+    background: #1a1a1a !important;
+    border: 1px solid #2a2a2a !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    padding: 15px !important;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-form.ladatam-form input:focus,
+.elementor-widget-form.ladatam-form textarea:focus {
+    border-color: #d9ff18 !important;
+    box-shadow: 0 0 0 3px rgba(217, 255, 24, 0.1);
+    outline: none;
+}
+
+.elementor-widget-form.ladatam-form input::placeholder,
+.elementor-widget-form.ladatam-form textarea::placeholder {
+    color: #888888 !important;
+}
+
+/* === ANIMACIONES DE SCROLL === */
+
+/* Fade in up al hacer scroll */
+.elementor-element.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.elementor-element.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glow pulse continuo */
+.elementor-element.glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Float continuo */
+.elementor-element.float-effect {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* === DIVIDERS/SEPARADORES === */
+
+.elementor-widget-divider.tech-divider .elementor-divider-separator {
+    background: linear-gradient(90deg, transparent, #d9ff18, transparent) !important;
+}
+
+.elementor-widget-divider.gradient-divider .elementor-divider-separator {
+    background: linear-gradient(90deg, #d9ff18, #f8bb03) !important;
+    height: 3px !important;
+}
+
+/* === COUNTERS/STATS === */
+
+.elementor-widget-counter.ladatam-counter .elementor-counter-number-wrapper {
+    font-size: 3em;
+    font-weight: 800;
+    background: linear-gradient(135deg, #d9ff18 0%, #f8bb03 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.elementor-widget-counter.ladatam-counter .elementor-counter-title {
+    font-size: 0.875rem;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* === TABS === */
+
+.elementor-widget-tabs.ladatam-tabs .elementor-tab-title {
+    background: transparent;
+    border: 1px solid #2a2a2a;
+    color: #888888;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-tabs.ladatam-tabs .elementor-tab-title:hover,
+.elementor-widget-tabs.ladatam-tabs .elementor-tab-title.elementor-active {
+    background: #d9ff18;
+    border-color: #d9ff18;
+    color: #000000;
+}
+
+.elementor-widget-tabs.ladatam-tabs .elementor-tab-content {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 0 0 12px 12px;
+}
+
+/* === ACCORDION === */
+
+.elementor-widget-accordion.ladatam-accordion .elementor-accordion-item {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.elementor-widget-accordion.ladatam-accordion .elementor-tab-title {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-accordion.ladatam-accordion .elementor-tab-title:hover,
+.elementor-widget-accordion.ladatam-accordion .elementor-tab-title.elementor-active {
+    background: #2a2a2a;
+    color: #d9ff18;
+}
+
+.elementor-widget-accordion.ladatam-accordion .elementor-accordion-icon {
+    color: #d9ff18;
+}
+
+/* === PROGRESS BAR === */
+
+.elementor-widget-progress.ladatam-progress .elementor-progress-wrapper {
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.elementor-widget-progress.ladatam-progress .elementor-progress-bar {
+    background: linear-gradient(90deg, #d9ff18, #f8bb03);
+}
+
+/* === PRECIO/PRICING === */
+
+.elementor-widget-price-table.ladatam-pricing {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-price-table.ladatam-pricing:hover {
+    border-color: #d9ff18;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.elementor-widget-price-table.ladatam-pricing.featured {
+    border: 2px solid #d9ff18;
+    box-shadow: 0 0 30px rgba(217, 255, 24, 0.2);
+}
+
+/* === SOCIAL ICONS === */
+
+.elementor-widget-social-icons.ladatam-social .elementor-social-icon {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    transition: all 0.3s ease;
+}
+
+.elementor-widget-social-icons.ladatam-social .elementor-social-icon:hover {
+    background: #d9ff18;
+    border-color: #d9ff18;
+    color: #000000;
+    transform: translateY(-3px);
+}
+
+/* === KEYFRAMES === */
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 5px #d9ff18; }
+    50% { box-shadow: 0 0 30px #d9ff18, 0 0 60px #d9ff18; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}

@@ -1,0 +1,58 @@
+# WordPress Core (no trackear - se descarga de wordpress.org)
+# Si quieres trackear todo WordPress, comenta estas líneas
+# /wp-admin/
+# /wp-includes/
+
+# Configuración local (IMPORTANTE: contiene credenciales)
+wp-config.php
+
+# Archivos de caché y temporales
+*.log
+*.swp
+*.bak
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Plugins y temas que no son tuyos (se instalan desde WP)
+# wp-content/plugins/*
+# !wp-content/plugins/index.php
+
+# Uploads (archivos subidos por usuarios - muy pesados)
+wp-content/uploads/
+
+# Cache plugins
+wp-content/cache/
+wp-content/litespeed/
+wp-content/upgrade/
+
+# Object cache
+wp-content/object-cache.php
+wp-content/.litespeed_conf.dat
+
+# Backups
+wp-content/backup*/
+wp-content/backups/
+
+# mu-plugins (generados por hosting)
+wp-content/mu-plugins/
+
+# Debug
+wp-content/debug.log
+
+# Node modules (si usas build tools)
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Sistema
+.htaccess.bak
+php.ini
+.user.ini
+
+# Archivos de Hostinger generados automáticamente
+create_autologin_*.php
