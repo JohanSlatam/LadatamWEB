@@ -20,7 +20,7 @@ get_header();
     <div class="grid-background"></div>
     <div class="hero-content">
         <div class="hero-badge">
-            <span class="ladatam-badge">🚀 Plataforma #1 en LATAM</span>
+            <span class="ladatam-badge">🚀 Plataforma pensada para LATAM</span>
         </div>
         <h1 class="hero-title">
             <span class="tech-bracket">{</span> Aprende a usar datos e IA <span class="tech-bracket">}</span>
