@@ -114,7 +114,7 @@
 }
 
 .footer-tagline {
-    color: #888888;
+    color: #b0b0b0;
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 25px;
@@ -134,7 +134,7 @@
     background: #1a1a1a;
     border: 1px solid #2a2a2a;
     border-radius: 8px;
-    color: #888888;
+    color: #b0b0b0;
     transition: all 0.3s ease;
 }
 
@@ -164,7 +164,7 @@
 }
 
 .footer-links a {
-    color: #888888;
+    color: #b0b0b0;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;

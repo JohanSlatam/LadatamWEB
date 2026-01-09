@@ -178,7 +178,7 @@ get_header();
 }
 
 .value-card p {
-    color: #888888;
+    color: #b0b0b0;
     font-size: 0.95rem;
 }
 

@@ -143,7 +143,7 @@ get_header();
 }
 
 .tool-card p {
-    color: #888888;
+    color: #b0b0b0;
     font-size: 0.95rem;
 }
 
@@ -189,7 +189,7 @@ get_header();
 
 .process-step p {
     font-size: 0.9rem;
-    color: #888888;
+    color: #b0b0b0;
 }
 
 .process-arrow {

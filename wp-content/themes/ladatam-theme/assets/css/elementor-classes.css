@@ -349,7 +349,7 @@
 
 .elementor-widget-form.ladatam-form input::placeholder,
 .elementor-widget-form.ladatam-form textarea::placeholder {
-    color: #888888 !important;
+    color: #b0b0b0 !important;
 }
 
 /* === ANIMACIONES DE SCROLL === */
@@ -400,7 +400,7 @@
 
 .elementor-widget-counter.ladatam-counter .elementor-counter-title {
     font-size: 0.875rem;
-    color: #888888;
+    color: #b0b0b0;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -410,7 +410,7 @@
 .elementor-widget-tabs.ladatam-tabs .elementor-tab-title {
     background: transparent;
     border: 1px solid #2a2a2a;
-    color: #888888;
+    color: #b0b0b0;
     transition: all 0.3s ease;
 }
 

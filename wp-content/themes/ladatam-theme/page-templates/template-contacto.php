@@ -199,7 +199,7 @@ select.ladatam-input {
 }
 
 .contact-item p {
-    color: #888888;
+    color: #b0b0b0;
     font-size: 0.95rem;
     margin: 0;
 }
@@ -210,7 +210,7 @@ select.ladatam-input {
 }
 
 .social-links a {
-    color: #888888;
+    color: #b0b0b0;
     font-size: 0.95rem;
 }
 
@@ -247,7 +247,7 @@ select.ladatam-input {
 }
 
 .faq-item p {
-    color: #888888;
+    color: #b0b0b0;
     font-size: 0.9rem;
     margin: 0;
     line-height: 1.6;

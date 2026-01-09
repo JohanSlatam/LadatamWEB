@@ -279,7 +279,7 @@ get_header();
 
 .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: #888888;
+    color: #b0b0b0;
     margin-bottom: 30px;
 }
 
@@ -322,7 +322,7 @@ get_header();
 
 .stat-item .stat-label {
     font-size: 0.85rem;
-    color: #888888;
+    color: #b0b0b0;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -346,7 +346,7 @@ get_header();
 .section-intro {
     text-align: center;
     font-size: 1.2rem;
-    color: #888888;
+    color: #b0b0b0;
     margin-bottom: 50px;
 }
 
@@ -429,7 +429,7 @@ get_header();
 
 .benefit-card p {
     font-size: 0.95rem;
-    color: #888888;
+    color: #b0b0b0;
 }
 
 /* PILARES */
@@ -482,7 +482,7 @@ get_header();
 }
 
 .pilar-card p {
-    color: #888888;
+    color: #b0b0b0;
     margin-bottom: 20px;
 }
 
@@ -525,7 +525,7 @@ get_header();
 }
 
 .audiencia-card p {
-    color: #888888;
+    color: #b0b0b0;
 }
 
 .audiencia-conclusion {
@@ -578,7 +578,7 @@ get_header();
 
 .metodologia-step p {
     font-size: 0.85rem;
-    color: #888888;
+    color: #b0b0b0;
 }
 
 .metodologia-arrow {
