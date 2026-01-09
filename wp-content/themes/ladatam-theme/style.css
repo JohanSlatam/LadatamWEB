@@ -673,14 +673,14 @@ a:hover {
 }
 
 .bracket-decoration::before {
-    content: '{ ';
+    content: '< ';
     color: var(--ladatam-lima);
     font-family: var(--font-mono);
     font-weight: 300;
 }
 
 .bracket-decoration::after {
-    content: ' }';
+    content: ' />';
     color: var(--ladatam-lima);
     font-family: var(--font-mono);
     font-weight: 300;

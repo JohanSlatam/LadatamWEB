@@ -23,23 +23,23 @@ get_header();
             <span class="ladatam-badge">🚀 Crecimiento para LATAM</span>
         </div>
         <h1 class="hero-title">
-            <span class="tech-bracket">{</span> Aprende a usar datos e IA <span class="tech-bracket">}</span>
+            <span class="tech-bracket"></span> Aprende a usar datos e IA <span class="tech-bracket"></span>
             <br>
             <span class="text-gradient-animated">para hacer crecer tu negocio</span>
         </h1>
         <p class="hero-subtitle">
-            Sin programar. Sin lenguaje técnico. En español. Para Latinoamérica.
+            Para personas sin conocimientos técnicos. En español. Para toda Latinoamérica.
         </p>
         <div class="hero-features">
-            <p><span class="text-lima">👉</span> Formación práctica + herramientas reales + comunidad</p>
+            <p><span class="text-lima">👉</span> Herramientas reales + formación práctica + comunidad</p>
             <p><span class="text-lima">👉</span> De la teoría a la acción, paso a paso</p>
         </div>
         <div class="hero-buttons">
             <a href="/registro" class="ladatam-btn ladatam-btn-primary">
                 Empieza Gratis
             </a>
-            <a href="/aprender" class="ladatam-btn ladatam-btn-secondary">
-                Explorar Programas
+            <a href="/software" class="ladatam-btn ladatam-btn-secondary">
+                Ver Herramientas
             </a>
         </div>
         <div class="hero-stats">
@@ -81,7 +81,7 @@ get_header();
             </div>
             <div class="problem-card ladatam-card">
                 <div class="problem-icon">🤔</div>
-                <p>Los profesionales saben que "deben aprender IA", pero <strong class="text-lima">no saben por dónde empezar</strong></p>
+                <p>Los profesionales saben que "deben implementar IA", pero <strong class="text-lima">no saben por dónde empezar</strong></p>
             </div>
         </div>
         
@@ -100,6 +100,11 @@ get_header();
         
         <div class="benefits-grid">
             <div class="benefit-card ladatam-card-glow">
+                <div class="benefit-icon gradient-icon">�</div>
+                <h3>Herramientas</h3>
+                <p>Software listo para usar, sin programar</p>
+            </div>
+            <div class="benefit-card ladatam-card-glow">
                 <div class="benefit-icon gradient-icon">📚</div>
                 <h3>Educación práctica</h3>
                 <p>Formación en IA y datos aplicada a tu realidad</p>
@@ -108,11 +113,6 @@ get_header();
                 <div class="benefit-icon gradient-icon">💼</div>
                 <h3>Casos reales</h3>
                 <p>Ejemplos aplicados a negocios latinoamericanos</p>
-            </div>
-            <div class="benefit-card ladatam-card-glow">
-                <div class="benefit-icon gradient-icon">🔧</div>
-                <h3>Herramientas</h3>
-                <p>Software listo para usar, sin programar</p>
             </div>
             <div class="benefit-card ladatam-card-glow">
                 <div class="benefit-icon gradient-icon">🤝</div>
@@ -134,19 +134,19 @@ get_header();
         <h2 class="section-title text-gradient">Los 3 Pilares de LADATAM</h2>
         
         <div class="pilares-grid">
-            <a href="/aprender" class="pilar-card ladatam-card">
-                <div class="pilar-icon">🎓</div>
-                <span class="pilar-tag">EDUCACIÓN</span>
-                <h3>Aprender</h3>
-                <p>Formación práctica en IA y datos para no técnicos</p>
-                <span class="pilar-link">Explorar cursos →</span>
-            </a>
             <a href="/software" class="pilar-card ladatam-card featured">
                 <div class="pilar-icon">🧩</div>
                 <span class="pilar-tag ladatam-badge-amber">SOFTWARE</span>
                 <h3>Herramientas</h3>
                 <p>Software propio listo para usar sin programar</p>
                 <span class="pilar-link">Ver herramientas →</span>
+            </a>
+            <a href="/aprender" class="pilar-card ladatam-card">
+                <div class="pilar-icon">🎓</div>
+                <span class="pilar-tag">EDUCACIÓN</span>
+                <h3>Aprender</h3>
+                <p>Formación práctica en IA y datos para no técnicos</p>
+                <span class="pilar-link">Explorar cursos →</span>
             </a>
             <a href="/comunidad" class="pilar-card ladatam-card">
                 <div class="pilar-icon">🌎</div>
