@@ -148,7 +148,7 @@ get_header();
 
 .content-item p {
     font-size: 0.95rem;
-    color: #b0b0b0;
+    color: #e0e0e0;
     margin: 0;
 }
 
@@ -181,7 +181,7 @@ get_header();
 }
 
 .format-card p {
-    color: #b0b0b0;
+    color: #e0e0e0;
     font-size: 0.95rem;
 }
 

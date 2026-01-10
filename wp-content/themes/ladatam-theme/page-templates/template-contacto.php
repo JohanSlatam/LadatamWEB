@@ -12,7 +12,7 @@ get_header();
     <div class="grid-background"></div>
     <div class="hero-content">
         <h1 class="hero-title">
-            <span class="tech-bracket">{</span> Contacto <span class="tech-bracket">}</span>
+            <span class="tech-bracket">&lt;</span> Contacto <span class="tech-bracket">/&gt;</span>
         </h1>
         <p class="hero-subtitle">
             ¿Tienes preguntas? Estamos aquí para ayudarte.
@@ -65,7 +65,7 @@ get_header();
                     <div class="contact-icon">📧</div>
                     <div>
                         <h3>Email</h3>
-                        <a href="mailto:hola@ladatam.com">hola@ladatam.com</a>
+                        <a href="mailto:johan@ladatam.com">johan@ladatam.com</a>
                     </div>
                 </div>
                 
@@ -74,9 +74,10 @@ get_header();
                     <div>
                         <h3>Redes Sociales</h3>
                         <div class="social-links">
-                            <a href="#" target="_blank">LinkedIn</a>
-                            <a href="#" target="_blank">Twitter</a>
-                            <a href="#" target="_blank">Instagram</a>
+                            <a href="https://www.linkedin.com/in/johan-salazar/" target="_blank">LinkedIn</a>
+                            <a href="https://x.com/ladatamai" target="_blank">X (Twitter)</a>
+                            <a href="https://www.instagram.com/ladatamai/" target="_blank">Instagram</a>
+                            <a href="https://www.youtube.com/@ladatamAI" target="_blank">YouTube</a>
                         </div>
                     </div>
                 </div>
@@ -136,7 +137,7 @@ get_header();
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #cccccc;
+    color: #e8e8e8;
     font-size: 0.9rem;
 }
 
@@ -199,7 +200,7 @@ select.ladatam-input {
 }
 
 .contact-item p {
-    color: #b0b0b0;
+    color: #e0e0e0;
     font-size: 0.95rem;
     margin: 0;
 }
@@ -210,7 +211,7 @@ select.ladatam-input {
 }
 
 .social-links a {
-    color: #b0b0b0;
+    color: #e0e0e0;
     font-size: 0.95rem;
 }
 
@@ -247,7 +248,7 @@ select.ladatam-input {
 }
 
 .faq-item p {
-    color: #b0b0b0;
+    color: #e0e0e0;
     font-size: 0.9rem;
     margin: 0;
     line-height: 1.6;
@@ -264,10 +265,98 @@ select.ladatam-input {
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    // Aquí puedes agregar la lógica de envío del formulario
-    alert('¡Gracias por tu mensaje! Te responderemos pronto.');
-    this.reset();
+    
+    const form = this;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    // Obtener datos del formulario
+    const formData = new FormData();
+    formData.append('action', 'ladatam_contact_form');
+    formData.append('nonce', ladatam_ajax.nonce);
+    formData.append('nombre', form.querySelector('#nombre').value);
+    formData.append('email', form.querySelector('#email').value);
+    formData.append('asunto', form.querySelector('#asunto').value);
+    formData.append('mensaje', form.querySelector('#mensaje').value);
+    
+    // Deshabilitar botón y mostrar loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'ENVIANDO...';
+    submitBtn.style.opacity = '0.7';
+    
+    // Enviar via AJAX
+    fetch(ladatam_ajax.url, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Éxito
+            submitBtn.textContent = '✓ ENVIADO';
+            submitBtn.style.background = '#22c55e';
+            submitBtn.style.borderColor = '#22c55e';
+            form.reset();
+            
+            // Mostrar mensaje de éxito
+            showMessage(data.data.message, 'success');
+            
+            // Restaurar botón después de 3 segundos
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.style.borderColor = '';
+                submitBtn.style.opacity = '';
+                submitBtn.disabled = false;
+            }, 3000);
+        } else {
+            // Error
+            showMessage(data.data.message, 'error');
+            submitBtn.textContent = originalText;
+            submitBtn.style.opacity = '';
+            submitBtn.disabled = false;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showMessage('Error de conexión. Por favor, intenta de nuevo.', 'error');
+        submitBtn.textContent = originalText;
+        submitBtn.style.opacity = '';
+        submitBtn.disabled = false;
+    });
 });
+
+function showMessage(message, type) {
+    // Remover mensaje anterior si existe
+    const existingMsg = document.querySelector('.form-message');
+    if (existingMsg) existingMsg.remove();
+    
+    // Crear mensaje
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'form-message ' + type;
+    msgDiv.innerHTML = message;
+    msgDiv.style.cssText = `
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        animation: fadeIn 0.3s ease;
+        ${type === 'success' 
+            ? 'background: rgba(34, 197, 94, 0.1); border: 1px solid #22c55e; color: #22c55e;' 
+            : 'background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444;'}
+    `;
+    
+    // Insertar antes del formulario
+    const form = document.getElementById('contactForm');
+    form.parentNode.insertBefore(msgDiv, form);
+    
+    // Auto-remover después de 5 segundos
+    setTimeout(() => {
+        msgDiv.style.opacity = '0';
+        msgDiv.style.transition = 'opacity 0.3s ease';
+        setTimeout(() => msgDiv.remove(), 300);
+    }, 5000);
+}
 </script>
 
 <?php get_footer(); ?>

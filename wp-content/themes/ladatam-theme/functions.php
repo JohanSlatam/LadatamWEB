@@ -13,6 +13,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// Incluir handler del formulario de contacto
+require_once get_stylesheet_directory() . '/includes/contact-handler.php';
+
 /**
  * Encolar estilos del tema padre e hijo
  */

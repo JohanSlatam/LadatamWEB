@@ -31,15 +31,15 @@ get_header();
             Para personas sin conocimientos técnicos. En español. Para toda Latinoamérica.
         </p>
         <div class="hero-features">
-            <p><span class="text-lima">👉</span> Herramientas reales + formación práctica + comunidad</p>
+            <p><span class="text-lima">👉</span> Soluciones reales + Herramientas prácticas + comunidad</p>
             <p><span class="text-lima">👉</span> De la teoría a la acción, paso a paso</p>
         </div>
         <div class="hero-buttons">
             <a href="/registro" class="ladatam-btn ladatam-btn-primary">
-                Empieza Gratis
+                Ver Herramientas
             </a>
             <a href="/software" class="ladatam-btn ladatam-btn-secondary">
-                Ver Herramientas
+                Empieza Gratis
             </a>
         </div>
         <div class="hero-stats">
@@ -165,20 +165,20 @@ get_header();
         <h2 class="section-title">👥 ¿Para quién es LADATAM?</h2>
         
         <div class="audiencia-grid">
-           <div class="audiencia-card ladatam-card">
-                <div class="audiencia-icon">🏪</div>
-                <h3>PYMEs</h3>
-                <p>Que buscan automatizar procesos y competir sin grandes inversiones tecnológicas.</p>
+            <div class="audiencia-card ladatam-card">
+                <div class="audiencia-icon">👔</div>
+                <h3>Profesionales</h3>
+                <p>Que quieren crecer, reconvertirse o mantenerse vigentes en la era de la IA.</p>
             </div>
             <div class="audiencia-card ladatam-card">
                 <div class="audiencia-icon">🚀</div>
                 <h3>Emprendedores</h3>
-                <p>Que necesitantomar mejores decisiones que hagan crecer su negocio.</p>
+                <p>Que necesitan usar datos e IA para tomar mejores decisiones y escalar.</p>
             </div>
             <div class="audiencia-card ladatam-card">
-                <div class="audiencia-icon">👔</div>
-                <h3>Profesionales</h3>
-                <p>Que quieren potenciar sus capacidades o mantenerse vigentes en la era de la IA.</p>
+                <div class="audiencia-icon">🏪</div>
+                <h3>PYMEs</h3>
+                <p>Que buscan automatizar procesos y competir sin grandes inversiones tecnológicas.</p>
             </div>
         </div>
         
@@ -275,11 +275,12 @@ get_header();
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 24px;
+    color: #e8e8e8;
 }
 
 .hero-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: #b0b0b0;
+    color: #e0e0e0;
     margin-bottom: 30px;
 }
 
@@ -290,7 +291,7 @@ get_header();
 .hero-features p {
     font-size: 1.1rem;
     margin-bottom: 10px;
-    color: #cccccc;
+    color: #e0e0e0;
 }
 
 .hero-buttons {
@@ -322,7 +323,7 @@ get_header();
 
 .stat-item .stat-label {
     font-size: 0.85rem;
-    color: #b0b0b0;
+    color: #e0e0e0;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -346,7 +347,7 @@ get_header();
 .section-intro {
     text-align: center;
     font-size: 1.2rem;
-    color: #b0b0b0;
+    color: #e0e0e0;
     margin-bottom: 50px;
 }
 
@@ -382,7 +383,7 @@ get_header();
 
 .problem-card p {
     font-size: 1.1rem;
-    color: #cccccc;
+    color: #e8e8e8;
 }
 
 /* QUÉ OFRECE */
@@ -429,7 +430,7 @@ get_header();
 
 .benefit-card p {
     font-size: 0.95rem;
-    color: #b0b0b0;
+    color: #e0e0e0;
 }
 
 /* PILARES */
@@ -482,7 +483,7 @@ get_header();
 }
 
 .pilar-card p {
-    color: #b0b0b0;
+    color: #e0e0e0;
     margin-bottom: 20px;
 }
 
@@ -525,7 +526,7 @@ get_header();
 }
 
 .audiencia-card p {
-    color: #b0b0b0;
+    color: #e0e0e0;
 }
 
 .audiencia-conclusion {
@@ -574,11 +575,12 @@ get_header();
 .metodologia-step h3 {
     font-size: 1.1rem;
     margin-bottom: 8px;
+    color: #ffffff;
 }
 
 .metodologia-step p {
     font-size: 0.85rem;
-    color: #b0b0b0;
+    color: #c8c8c8;
 }
 
 .metodologia-arrow {

@@ -147,7 +147,7 @@ get_header();
 .mission-text {
     font-size: 1.4rem;
     line-height: 1.8;
-    color: #cccccc;
+    color: #e8e8e8;
 }
 
 .section-dark {
@@ -178,7 +178,7 @@ get_header();
 }
 
 .value-card p {
-    color: #b0b0b0;
+    color: #e0e0e0;
     font-size: 0.95rem;
 }
 
@@ -191,7 +191,7 @@ get_header();
 .story-content p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #cccccc;
+    color: #e8e8e8;
     margin-bottom: 25px;
 }
 

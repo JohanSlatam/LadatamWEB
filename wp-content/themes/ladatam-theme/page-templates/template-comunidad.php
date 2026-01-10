@@ -133,7 +133,7 @@ get_header();
 }
 
 .community-card p {
-    color: #b0b0b0;
+    color: #e0e0e0;
     font-size: 0.95rem;
 }
 
@@ -188,7 +188,7 @@ get_header();
 
 .testimonial-author span {
     font-size: 0.85rem;
-    color: #b0b0b0;
+    color: #e0e0e0;
 }
 
 .text-center {
