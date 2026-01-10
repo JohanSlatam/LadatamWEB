@@ -31,15 +31,15 @@ get_header();
             Para personas sin conocimientos técnicos. En español. Para toda Latinoamérica.
         </p>
         <div class="hero-features">
-            <p><span class="text-lima">👉</span> Herramientas reales + formación práctica + comunidad</p>
+            <p><span class="text-lima">👉</span> Soluciones reales + Herramientas práctica + comunidad</p>
             <p><span class="text-lima">👉</span> De la teoría a la acción, paso a paso</p>
         </div>
         <div class="hero-buttons">
             <a href="/registro" class="ladatam-btn ladatam-btn-primary">
-                Empieza Gratis
+                Ver Herramientas
             </a>
             <a href="/software" class="ladatam-btn ladatam-btn-secondary">
-                Ver Herramientas
+                Empieza Gratis
             </a>
         </div>
         <div class="hero-stats">
